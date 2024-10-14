@@ -1,11 +1,11 @@
-# @kkmb/capris
+# capris
 
-A simple logging 
+A simple logging for server side js
 
 ## Installation
 
 ```bash
-npm install @kkmb/capris
+npm install capris
 ```
 
 ## Usage
