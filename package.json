@@ -1,0 +1,39 @@
+{
+  "name": "capris",
+  "version": "1.0.0",
+  "description": "A simple logging",
+  "main": "dist/index.js",
+  "type": "commonjs",
+  "scripts": {
+    "start": "npx tsc && node dist/index.js",
+    "dev": "concurrently -n \"TS,Node\" \"npx tsc --watch\" \"nodemon dist/index.js\"",
+    "copy": "copy package.json dist\\ && copy README.md dist\\",
+    "build": "rmdir dist\\ && npx tsc && npm run copy && cd dist\\ && npm pack  "
+  },
+
+  "keywords": [
+    "log",
+    "logs",
+    "logger",
+    "logging",
+    "console",
+    "level"
+  ],
+  "author": "Maximilien KENGNE KONGNE",
+  "license": "MIT",
+
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/maximilien-kengne-kongne/capris.git"
+  },
+  "bugs": {
+    "url": "https://github.com/maximilien-kengne-kongne/capris/issues"
+  },
+
+  "devDependencies": {
+    "@types/node": "^22.7.5",
+    "concurrently": "^9.0.1",
+    "nodemon": "^3.1.7",
+    "typescript": "^5.6.3"
+  }
+}
