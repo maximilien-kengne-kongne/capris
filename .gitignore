@@ -7,7 +7,6 @@
 
 # Node
 node_modules
-package.json
 tsconfig.json
 package-lock.json
 kkmb-capris-1.0.0.tgz
