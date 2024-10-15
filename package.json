@@ -1,14 +1,12 @@
 {
-  "name": "capris",
+  "name": "@kkmb/capris",
   "version": "1.0.0",
-  "description": "A simple logging",
+  "description": "A simple logging for server side js",
   "main": "dist/index.js",
   "type": "commonjs",
   "scripts": {
-    "start": "npx tsc && node dist/index.js",
-    "dev": "concurrently -n \"TS,Node\" \"npx tsc --watch\" \"nodemon dist/index.js\"",
     "copy": "copy package.json dist\\ && copy README.md dist\\",
-    "build": "rmdir dist\\ && npx tsc && npm run copy && cd dist\\ && npm pack  "
+    "build": "rmdir /s /q dist\\ && npx tsc && npm run copy && cd dist\\ && npm pack && move kkmb-capris-1.0.0.tgz ../ "
   },
 
   "keywords": [
@@ -32,8 +30,6 @@
 
   "devDependencies": {
     "@types/node": "^22.7.5",
-    "concurrently": "^9.0.1",
-    "nodemon": "^3.1.7",
     "typescript": "^5.6.3"
   }
 }

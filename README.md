@@ -1,17 +1,17 @@
-# capris
+# @kkmb/capris
 
 A simple logging for server side js
 
 ## Installation
 
 ```bash
-npm install capris
+npm install @kkmb/capris
 ```
 
 ## Usage
 
 ```js
-const {Logger} = require( 'capris');
+const {Logger} = require( '@kkmb/capris');
 
 Logger.info("hello world ! ");
 Logger.info("This is info log !")
