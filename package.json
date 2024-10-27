@@ -2,7 +2,7 @@
   "name": "@kkmb/capris",
   "version": "1.0.1",
   "description": "A simple logging for server side js",
-  "main": "dist/index.js",
+  "main": "index.js",
   "type": "commonjs",
   "scripts": {
     "copy": "copy package.json dist\\ && copy README.md dist\\",
@@ -15,7 +15,12 @@
     "logger",
     "logging",
     "console",
-    "level"
+    "level",
+    "info",
+    "trace",
+    "debug",
+    "warn",
+    "error"
   ],
   "author": "Maximilien KENGNE KONGNE",
   "license": "MIT",

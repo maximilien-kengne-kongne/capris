@@ -10,13 +10,26 @@ npm install @kkmb/capris
 
 ## Usage
 
-```js
-const {Logger} = require( '@kkmb/capris');
+- Commonjs
 
-Logger.info("hello world ! ");
-Logger.info("This is info log !")
-Logger.error("This is error log !")
-Logger.warn("This is warning log !")
-Logger.debug("This is debug log !")
-Logger.trace("This is trace log !")
+```js
+const {Log} = require( '@kkmb/capris');
+const log = new Log();
+log.info("This is info log !");
+log.error("This is error log !");
+log.warn("This is warning log !");
+log.debug("This is debug log !");
+log.trace("This is trace log !");
+```
+
+- ESM
+
+```js
+import {Log} from '@kkmb/capris';
+const log = new Log();
+log.info("This is info log !");
+log.error("This is error log !");
+log.warn("This is warning log !");
+log.debug("This is debug log !");
+log.trace("This is trace log !");
 ```

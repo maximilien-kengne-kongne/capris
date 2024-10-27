@@ -1,32 +1,30 @@
 
-import pack from './package.json';
+class Log {
+    private PID = this.generateNDigitNumber();
+    private PACKAGE_NAME = "[ @kkmb/capris ]";
+    private DATE_NOW_FORMAT = this.formatDateNow();
 
-export class Logger {
-
-    static PID = Logger.generateNDigitNumber();
-    static PACKAGE_NAME = "[" +pack.name +"] ";
-
-    public static info(...message: any[]) {
-        console.info("\n"  +Logger.formatDateNow(), Logger.colorizeText(" INFO ").green, "   " ,Logger.colorizeText(this.PID).default_color, "  ----  " ,this.PACKAGE_NAME, ...message);
+    public info(...message: any[]): void {
+        console.info("\n"  +this.DATE_NOW_FORMAT, this.colorizeText(" INFO ").green, "   " ,this.colorizeText(this.PID).default_color, "  ----  " ,this.PACKAGE_NAME, ...message);
     }
 
-    public static error(...message: any[]): void {
-        console.error("\n"  +Logger.formatDateNow(), Logger.colorizeText(" ERROR ").red, "  ",  Logger.colorizeText(this.PID).default_color, "  ----  " ,this.PACKAGE_NAME, ...message);
+    public error(...message: any[]): void {
+        console.error("\n"  +this.DATE_NOW_FORMAT, this.colorizeText(" ERROR ").red, "  ",  this.colorizeText(this.PID).default_color, "  ----  " ,this.PACKAGE_NAME, ...message);
     }
 
-    public static debug(...message: any[]): void {
-        console.debug("\n"  +Logger.formatDateNow(), Logger.colorizeText(" DEBUG ").blue,"  ",  Logger.colorizeText(this.PID).default_color, "  ----  " ,this.PACKAGE_NAME, ...message);
+    public debug(...message: any[]): void {
+        console.debug("\n"  +this.DATE_NOW_FORMAT, this.colorizeText(" DEBUG ").blue,"  ",  this.colorizeText(this.PID).default_color, "  ----  " ,this.PACKAGE_NAME, ...message);
     }
 
-    public static warn(...message: any[]): void {
-        console.warn("\n"  +Logger.formatDateNow(), Logger.colorizeText(" WARNING ").yellow,"", Logger.colorizeText(this.PID).default_color, "  ----  " ,this.PACKAGE_NAME, ...message);
+    public warn(...message: any[]): void {
+        console.warn("\n"  +this.formatDateNow(), this.colorizeText(" WARNING ").yellow,"", this.colorizeText(this.PID).default_color, "  ----  " ,this.PACKAGE_NAME, ...message);
     }
 
-    public static trace(...message: any[]): void {
-        console.trace("\n"  +Logger.formatDateNow(), Logger.colorizeText(" TRACE ").cyan,"  ",  Logger.colorizeText(this.PID).default_color, "  ----  ", this.PACKAGE_NAME, ...message);
+    public trace(...message: any[]): void {
+        console.trace("\n"  +this.DATE_NOW_FORMAT, this.colorizeText(" TRACE ").cyan,"  ",  this.colorizeText(this.PID).default_color, "  ----  ", this.PACKAGE_NAME, ...message);
     }
 
-    public static generateNDigitNumber(n: number = 6): number {
+    private generateNDigitNumber(n: number = 6): number {
 
         let digit: number;
 
@@ -40,7 +38,7 @@ export class Logger {
         return Math.floor( digit * (max - min + 1)) + min;
     }
 
-    public static colorizeText = (...args: any[]) => ({
+    private colorizeText = (...args: any[]) => ({
         black: `\x1b[30m${args.join(' ')}`,
         red: `\x1b[31m${args.join(' ')}`,
         green: `\x1b[32m${args.join(' ')}`,
@@ -52,34 +50,13 @@ export class Logger {
         default_color: `\x1b[0m${args.join(' ')}`,
     });
 
-    public static formatDateNow(): string {
-        let dateNow: Date = new Date();
-
-        let day = dateNow.getDate();
-        let month = dateNow.getMonth() + 1;
-        let year = dateNow.getFullYear();
-
-        let shortDateFormat = day + "-" + month + "-" + year;
-
-        let hour = dateNow.getHours();
-        let minute = dateNow.getMinutes();
-        let second = dateNow.getSeconds();
-
-        let shortTimeFormat = hour + ":" + minute + ":" + second;
-
-        return shortDateFormat + " " +shortTimeFormat;
+    private formatDateNow(): string {
+        return new Date().toLocaleString();
     }
 
-
-    /*     static colorizeBackground = (...args: any[]) => ({
-             bgBlack: `\x1b[40m${args.join(' ')}\x1b[0m`,
-             bgRed: `\x1b[41m${args.join(' ')}\x1b[0m`,
-             bgGreen: `\x1b[42m${args.join(' ')}\x1b[0m`,
-             bgYellow: `\x1b[43m${args.join(' ')}\x1b[0m`,
-             bgBlue: `\x1b[44m${args.join(' ')}\x1b[0m`,
-             bgMagenta: `\x1b[45m${args.join(' ')}\x1b[0m`,
-             bgCyan: `\x1b[46m${args.join(' ')}\x1b[0m`,
-             bgWhite: `\x1b[47m${args.join(' ')}\x1b[0m`
-         });*/
 }
+
+module.exports.Log = Log;
+
+
 
