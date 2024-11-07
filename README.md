@@ -1,11 +1,11 @@
-# @kkmb/capris
+# @kkmb/logger
 
 A simple logging for server side js
 
 ## Installation
 
 ```bash
-npm install @kkmb/capris
+npm install @kkmb/logger
 ```
 
 ## Usage
@@ -13,8 +13,8 @@ npm install @kkmb/capris
 - Commonjs
 
 ```js
-const {Log} = require( '@kkmb/capris');
-const log = new Log();
+const {Logger} = require( '@kkmb/logger');
+const log = new Logger();
 log.info("This is info log !");
 log.error("This is error log !");
 log.warn("This is warning log !");
@@ -25,8 +25,8 @@ log.trace("This is trace log !");
 - ESM
 
 ```js
-import {Log} from '@kkmb/capris';
-const log = new Log();
+import {Logger} from '@kkmb/logger';
+const log = new Logger();
 log.info("This is info log !");
 log.error("This is error log !");
 log.warn("This is warning log !");

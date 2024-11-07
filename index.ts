@@ -1,26 +1,28 @@
 
-class Log {
-    private PID = 151024
-    private PACKAGE_NAME = "[@kkmb/capris]";
+const DASH_DASH = "  ----  ";
+const PID = 151024;
+const PACKAGE_NAME = "[@kkmb/logger]";
+
+class Logger {
 
     public info(...message: any[]): void {
-        console.info("\n"  +this.formatDateNow(), this.colorizeText(" INFO ").green, "   " ,this.colorizeText(this.PID).default_color, "  ----  " ,this.PACKAGE_NAME, ...message);
+        console.info("\n"  +this.formatDateNow(), this.colorizeText(" INFO ").green, "   " ,this.colorizeText(PID).default_color,PACKAGE_NAME, DASH_DASH, ...message);
     }
 
     public error(...message: any[]): void {
-        console.error("\n"  +this.formatDateNow(), this.colorizeText(" ERROR ").red, "  ",  this.colorizeText(this.PID).default_color, "  ----  " ,this.PACKAGE_NAME, ...message);
+        console.error("\n"  +this.formatDateNow(), this.colorizeText(" ERROR ").red, "  ",  this.colorizeText(PID).default_color,PACKAGE_NAME, DASH_DASH, ...message);
     }
 
     public debug(...message: any[]): void {
-        console.debug("\n"  +this.formatDateNow(), this.colorizeText(" DEBUG ").blue,"  ",  this.colorizeText(this.PID).default_color, "  ----  " ,this.PACKAGE_NAME, ...message);
+        console.debug("\n"  +this.formatDateNow(), this.colorizeText(" DEBUG ").blue,"  ",  this.colorizeText(PID).default_color,PACKAGE_NAME, DASH_DASH, ...message);
     }
 
     public warn(...message: any[]): void {
-        console.warn("\n"  +this.formatDateNow(), this.colorizeText(" WARNING ").yellow,"", this.colorizeText(this.PID).default_color, "  ----  " ,this.PACKAGE_NAME, ...message);
+        console.warn("\n"  +this.formatDateNow(), this.colorizeText(" WARNING ").yellow,"", this.colorizeText(PID).default_color ,PACKAGE_NAME, DASH_DASH, ...message);
     }
 
     public trace(...message: any[]): void {
-        console.trace("\n"  +this.formatDateNow(), this.colorizeText(" TRACE ").cyan,"  ",  this.colorizeText(this.PID).default_color, "  ----  ", this.PACKAGE_NAME, ...message);
+        console.trace("\n"  +this.formatDateNow(), this.colorizeText(" TRACE ").cyan,"  ",  this.colorizeText(PID).default_color, PACKAGE_NAME, DASH_DASH, ...message);
     }
 
     private colorizeText = (...args: any[]) => ({
@@ -38,7 +40,7 @@ class Log {
 
 }
 
-module.exports.Log = Log;
+module.exports.Logger = Logger;
 
 
 
