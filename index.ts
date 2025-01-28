@@ -17,7 +17,7 @@ class Logger {
 
     // Logging methods for different log levels
     public info(...message: any[]): void {
-        this.log("INFO", "green", ...message);
+        this.log(" INFO", "green", ...message);
     }
 
     public error(...message: any[]): void {
@@ -29,7 +29,7 @@ class Logger {
     }
 
     public warn(...message: any[]): void {
-        this.log("WARNING", "yellow", ...message);
+        this.log(" WARN", "yellow", ...message);
     }
 
     public trace(...message: any[]): void {
