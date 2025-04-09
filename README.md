@@ -33,19 +33,19 @@ npm install @kkmb/logger
 
 ## Usage
 
-### Importing the Logger
-```javascript
-const { Logger } = require('@kkmb/logger');
-const logger = new Logger();
+- Commonjs
+
+```js
+const {Logger} = require( '@kkmb/logger');
+const log = new Logger();
+
 ```
 
-### Logging Messages
-```javascript
-logger.info("This is an info message ");
-logger.warn("This is a warning message");
-logger.error("This is an error message");
-logger.debug("This is a debug message");
-logger.trace("This is a trace message");
+- ESM
+
+```js
+import {Logger} from '@kkmb/logger';
+const log = new Logger();
 ```
 
 ---
@@ -74,9 +74,11 @@ Logs a trace message.
 
 ### Example 1: Basic Logging
 ```javascript
-logger.info("Application started");
-logger.warn("Low memory warning");
-logger.error("An unexpected error occurred");
+logger.info("This is info log !");
+logger.error("This is error log !");
+logger.warn("This is warning log !");
+logger.debug("This is debug log !");
+logger.trace("This is trace log !");
 ```
 
 

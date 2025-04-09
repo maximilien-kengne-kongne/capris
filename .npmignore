@@ -1,3 +1,21 @@
 index.ts
 
 !dist/**
+
+# Node
+node_modules
+dist
+tsconfig.json
+package-lock.json
+*.tgz
+
+
+### VS Code ###
+.vscode/
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+
