@@ -43,7 +43,7 @@ export class Logger {
         // Process the message, add formatting, and log
 
         const datePart = `${this.formatDateNow()} `;
-        const formattedMessage = `${datePart} ${level} 151024 ------ [LOGGER] ${message} --- END ---`;
+        const formattedMessage = `${datePart} ${level} 151024 ------ [LOGGER] ${JSON.stringify(message)} --- END ---`;
 
         // Log differently based on environment
         if (isNode) {
